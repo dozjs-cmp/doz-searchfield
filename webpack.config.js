@@ -8,7 +8,7 @@ const libraryName = _package.name.replace(/-([a-z])/g, function (g) { return g[1
 module.exports = {
     entry: './index.js',
     output: {
-        filename: './dist/build.min.js',
+        filename: './dist/bundle.min.js',
         library: libraryName,
         umdNamedDefine: true,
         libraryTarget: 'umd'
