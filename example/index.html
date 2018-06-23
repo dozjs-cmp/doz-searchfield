@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="DOZ - COMPONENT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>DOZ - COMPONENT</title>
+    <script src="https://unpkg.com/doz/dist/doz.js?5"></script>
+    <script src="../dist/build.js?7545042620488577301"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+
+    const app = new Doz({
+        root: '#app',
+        template: `
+            <your-component-tag></your-component-tag>
+        `
+    });
+
+</script>
+</body>
+</html>

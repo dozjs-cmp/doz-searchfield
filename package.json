@@ -1,0 +1,47 @@
+{
+    "name": "doz-component",
+    "version": "0.0.0",
+    "description": "",
+    "main": "dist/build.js",
+    "scripts": {
+        "release:before": "npm run-script test",
+        "release:major": "webpack --env.major && npm run-script release:publish",
+        "release:minor": "webpack --env.minor && npm run-script release:publish",
+        "release:patch": "webpack --env.patch && npm run-script release:publish",
+        "release:publish": "echo git commit -a -m BUILD && version-to-tag.sh && npm publish",
+        "build": "webpack --progress",
+        "test": "mocha test"
+    },
+    "keywords": [
+        "doz",
+        "component"
+    ],
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "",
+    "author": "",
+    "license": "",
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.1",
+        "bejs": "^2.0.1",
+        "chai": "^4.1.2",
+        "css-loader": "^0.28.11",
+        "doz": "^1.1.1",
+        "jsdoc-to-markdown": "^4.0.1",
+        "jsdom": "^11.6.2",
+        "jsdom-global": "^3.0.2",
+        "mocha": "^5.0.4",
+        "style-loader": "^0.21.0",
+        "unminified-webpack-plugin": "^1.4.2",
+        "webpack": "^3.10.0",
+        "webpack-auto-inject-version": "^1.0.0"
+    },
+    "dependencies": {}
+}
