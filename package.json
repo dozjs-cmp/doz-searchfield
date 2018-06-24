@@ -1,7 +1,7 @@
 {
-    "name": "doz-component",
+    "name": "doz-searchfield",
     "version": "0.0.0",
-    "description": "",
+    "description": "A searchfield for DOZ",
     "main": "dist/build.js",
     "scripts": {
         "release:before": "npm run-script test",
@@ -16,18 +16,20 @@
     },
     "keywords": [
         "doz",
-        "component"
+        "component",
+        "search",
+        "input"
     ],
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "git+https://github.com/dozjs-cmp/doz-searchfield.git"
     },
     "bugs": {
-        "url": ""
+        "url": "https://github.com/dozjs-cmp/doz-searchfield/issues"
     },
-    "homepage": "",
-    "author": "",
-    "license": "",
+    "homepage": "https://github.com/dozjs-cmp/doz-searchfield#readme",
+    "author": "Fabio Ricali",
+    "license": "MIT",
     "devDependencies": {
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",

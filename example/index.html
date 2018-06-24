@@ -21,10 +21,35 @@
 
 <script>
 
+    Doz.component('app-wrapper', {
+        props: {
+            log: ''
+        },
+        template() {
+            return `
+                <div>
+                    <doz-searchfield
+                        d:on-search="$onSearch"
+                        d:on-clear="$onClear"
+                    ></doz-searchfield>
+                    <p><strong>Log:</strong> ${this.props.log}</p>
+                </div>
+            `
+        },
+
+        $onSearch(obj) {
+            this.props.log = obj.search;
+        },
+
+        $onClear() {
+            this.props.log = '';
+        }
+    });
+
     const app = new Doz({
         root: '#app',
         template: `
-            <your-component-tag></your-component-tag>
+            <app-wrapper></app-wrapper>
         `
     });
 
