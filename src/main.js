@@ -3,12 +3,12 @@ import './style.css'
 export default {
 
     props: {
-        name: 'super DOZ'
+        name: 'DOZ'
     },
 
     template() {
         return `
-            <div>
+            <div class="my-component">
                 hello ${this.props.name}
             </div>
         `

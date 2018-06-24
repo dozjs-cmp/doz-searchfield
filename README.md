@@ -8,7 +8,7 @@ $ git clone https://github.com/dozjs/doz-component-starter.git your-component-fo
 
 Install dev dependencies
 ```
-npm install
+$ npm install
 ```
 
 ## Remember

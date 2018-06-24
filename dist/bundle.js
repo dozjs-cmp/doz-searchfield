@@ -116,7 +116,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack://DozComponent/./src/style.css?./node_modules/css-loader");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".my-component {\\r\\n    font-size: 24px;\\r\\n}\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack://DozComponent/./src/style.css?./node_modules/css-loader");
 
 /***/ }),
 
@@ -163,7 +163,7 @@ eval("\n\n/**\n * When source maps are enabled, `style-loader` uses a link eleme
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\n__webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\nexports.default = {\n\n    props: {\n        name: 'super DOZ'\n    },\n\n    template: function template() {\n        return '\\n            <div>\\n                hello ' + this.props.name + '\\n            </div>\\n        ';\n    },\n    onCreate: function onCreate() {},\n    onMount: function onMount() {},\n    onUpdate: function onUpdate() {},\n    onDestroy: function onDestroy() {}\n};\n\n//# sourceURL=webpack://DozComponent/./src/main.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\n__webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\nexports.default = {\n\n    props: {\n        name: 'DOZ'\n    },\n\n    template: function template() {\n        return '\\n            <div class=\"my-component\">\\n                hello ' + this.props.name + '\\n            </div>\\n        ';\n    },\n    onCreate: function onCreate() {},\n    onMount: function onMount() {},\n    onUpdate: function onUpdate() {},\n    onDestroy: function onDestroy() {}\n};\n\n//# sourceURL=webpack://DozComponent/./src/main.js?");
 
 /***/ }),
 
