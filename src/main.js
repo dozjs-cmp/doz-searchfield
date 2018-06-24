@@ -3,7 +3,7 @@ import './style.css'
 export default {
 
     props: {
-        name: 'DOZ'
+        name: 'super DOZ'
     },
 
     template() {

@@ -1,5 +1,5 @@
-const Component = require('../src/main');
-const be = require('bejs');
+import Component from '../src/main';
+import be from 'bejs';
 
 describe('my-test', function () {
 
@@ -17,5 +17,8 @@ describe('my-test', function () {
         document.body.innerHTML = '';
     });
 
-    //...
+    it('should an object', function () {
+        be.err.object(Component)
+    });
+
 });

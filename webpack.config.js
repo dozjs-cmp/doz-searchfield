@@ -1,17 +1,25 @@
-const webpack = require('webpack');
 const unminifiedWebpackPlugin = require('unminified-webpack-plugin');
 const WebpackAutoInject = require('webpack-auto-inject-version');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const _package = require('./package');
 
-const libraryName = _package.name.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+function dashToCamelCase(str) {
+    return str
+        .toLowerCase()
+        .replace(/^(.)/, function (g) {return g.toUpperCase(); })
+        .replace(/-([a-z])/g, function (g) {return g[1].toUpperCase(); });
+}
+
+const libraryName = dashToCamelCase(_package.name);
 
 module.exports = {
     entry: './index.js',
     output: {
-        filename: './dist/bundle.min.js',
+        filename: './bundle.min.js',
         library: libraryName,
         umdNamedDefine: true,
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
+        globalObject: 'this'
     },
     resolve: {
         modules: ['node_modules'],
@@ -33,13 +41,15 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: true,
-            comments: false,
-            compress: {
-                warnings: false,
-                drop_console: true
-            }, include: /\.min\.js$/
+        new UglifyJsPlugin({
+            uglifyOptions: {
+                mangle: true,
+                comments: false,
+                compress: {
+                    warnings: false,
+                    drop_console: true
+                }, include: /\.min\.js$/
+            }
         }),
         new WebpackAutoInject({
             PACKAGE_JSON_PATH: './package.json',
