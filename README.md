@@ -24,7 +24,7 @@ new Doz({
 Locally
 ```javascript
 import Doz from 'doz'
-import DozSearchfield from 'doz-searchfield'
+import DozSearchfield from 'doz-searchfield/lib'
 
 Doz.component('my-wrapper', {
     components: {
@@ -57,6 +57,7 @@ new Doz({
 | input-class | | css input class |
 | input-id | | input ID |
 | show-clear-button | true | show clear button |
+| ---- | ------- | ----------- |
 
 ## Events
 
@@ -64,6 +65,7 @@ new Doz({
 | ---- | ------- | ----------- |
 | search | value | Triggered when search |
 | clear | | Triggered when clear value |
+| ---- | ------- | ----------- |
 
 ### Example
 ```javascript
