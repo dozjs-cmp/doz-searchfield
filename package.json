@@ -2,7 +2,7 @@
     "name": "doz-searchfield",
     "version": "0.0.0",
     "description": "A searchfield for DOZ",
-    "main": "dist/build.js",
+    "main": "dist/bundle.js",
     "scripts": {
         "release:before": "npm run-script test",
         "release:major": "webpack --env.major --mode=production && npm run-script release:publish",
