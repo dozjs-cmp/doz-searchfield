@@ -18,8 +18,7 @@ module.exports = {
         filename: './bundle.min.js',
         library: libraryName,
         umdNamedDefine: true,
-        libraryTarget: 'umd',
-        globalObject: 'this'
+        libraryTarget: 'umd'
     },
     resolve: {
         modules: ['node_modules'],
