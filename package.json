@@ -1,7 +1,7 @@
 {
     "name": "doz-searchfield",
     "version": "0.0.0",
-    "description": "A searchfield for DOZ",
+    "description": "A search field for DOZ",
     "main": "dist/bundle.js",
     "scripts": {
         "release:before": "npm run-script test",
