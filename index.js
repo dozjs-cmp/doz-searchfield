@@ -1,7 +1,7 @@
-import cmp from './src/main'
+import cmp from './lib'
 
 // expose component to global scope
-if (typeof window !== 'undefined' && window.Doz) {
+if (typeof Doz !== 'undefined') {
     Doz.component('doz-searchfield', cmp)
 }
 

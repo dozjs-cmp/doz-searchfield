@@ -770,18 +770,18 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _main = __webpack_require__(5);
+var _lib = __webpack_require__(5);
 
-var _main2 = _interopRequireDefault(_main);
+var _lib2 = _interopRequireDefault(_lib);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // expose component to global scope
-if (typeof window !== 'undefined' && window.Doz) {
-    Doz.component('doz-searchfield', _main2.default);
+if (typeof Doz !== 'undefined') {
+    Doz.component('doz-searchfield', _lib2.default);
 }
 
-exports.default = _main2.default;
+exports.default = _lib2.default;
 
 /***/ })
 /******/ ]);
