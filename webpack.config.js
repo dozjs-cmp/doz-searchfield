@@ -1,7 +1,6 @@
 const unminifiedWebpackPlugin = require('unminified-webpack-plugin');
 const WebpackAutoInject = require('webpack-auto-inject-version');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const _package = require('./package');
 
 function dashToCamelCase(str) {
     return str
@@ -10,7 +9,7 @@ function dashToCamelCase(str) {
         .replace(/-([a-z])/g, function (g) {return g[1].toUpperCase(); });
 }
 
-const libraryName = dashToCamelCase(_package.name);
+const libraryName = dashToCamelCase(require('./package').name);
 
 module.exports = {
     entry: './index.js',
