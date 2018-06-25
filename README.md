@@ -6,6 +6,8 @@ A search field component for DOZ
 npm install doz-searchfield
 ```
 
+Live <a href="https://dozjs-cmp.github.io/doz-searchfield/example/index.html">here</a>
+
 ## Usage
 
 Globally
@@ -57,7 +59,6 @@ new Doz({
 | input-class | | css input class |
 | input-id | | input ID |
 | show-clear-button | true | show clear button |
-| ---- | ------- | ----------- |
 
 ## Events
 
@@ -65,7 +66,6 @@ new Doz({
 | ---- | ------- | ----------- |
 | search | value | Triggered when search |
 | clear | | Triggered when clear value |
-| ---- | ------- | ----------- |
 
 ### Example
 ```javascript
