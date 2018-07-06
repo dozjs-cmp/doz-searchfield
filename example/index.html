@@ -21,37 +21,51 @@
 
 <script>
 
-    Doz.component('app-wrapper', {
+    new Doz({
+        root: '#app',
         props: {
-            log: ''
+            log1: '',
+            log2: ''
         },
         template() {
             return `
                 <div>
                     <doz-searchfield
                         placeholder="type here and press enter"
-                        d:on-search="$onSearch"
-                        d:on-clear="$onClear"
+                        d:on-search="$onSearch1"
+                        d:on-clear="$onClear1"
                     ></doz-searchfield>
-                    <p><strong>Log:</strong> ${this.props.log}</p>
+                    <p><strong>Log A:</strong> ${this.props.log1}</p>
+                    <doz-searchfield
+                        placeholder="type ahead (min 3 chars)"
+                        typeahead="3"
+                        d:on-search="$onSearch2"
+                        d:on-clear="$onClear2"
+                    ></doz-searchfield>
+                    <p><strong>Log B:</strong> ${this.props.log2}</p>
                 </div>
             `
         },
 
-        $onSearch(value) {
-            this.props.log = value;
+        $onSearch1(value) {
+            console.log('log1', 'search', value);
+            this.props.log1 = value;
         },
 
-        $onClear() {
-            this.props.log = '';
-        }
-    });
+        $onClear1() {
+            console.log('log1', 'clear');
+            this.props.log1 = '';
+        },
 
-    const app = new Doz({
-        root: '#app',
-        template: `
-            <app-wrapper></app-wrapper>
-        `
+        $onSearch2(value) {
+            console.log('log2', 'search', value);
+            this.props.log2 = value;
+        },
+
+        $onClear2() {
+            console.log('log2', 'clear');
+            this.props.log2 = '';
+        }
     });
 
 </script>
