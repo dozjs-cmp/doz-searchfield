@@ -3,7 +3,7 @@ A search field component for DOZ
 
 ## Install
 ```
-npm install doz-searchfield
+npm install doz-searchfield --save
 ```
 
 Live <a href="https://dozjs-cmp.github.io/doz-searchfield/example/index.html">here</a>
@@ -52,13 +52,14 @@ new Doz({
 | ---- | ------- | ----------- |
 | name | | Input name |
 | value| | value |
-| show-button | false | if true show search button |
-| button-label | Search | search button label |
-| placeholder | Search here... | input placeholder |
-| button-class | | css button class |
-| input-class | | css input class |
-| input-id | | input ID |
-| show-clear-button | true | show clear button |
+| show-button | false | If true show search button |
+| button-label | Search | Search button label |
+| placeholder | Search here... | Input placeholder |
+| button-class | | CSS button class |
+| input-class | | CSS input class |
+| input-id | | Input ID |
+| show-clear-button | true | Show clear button |
+| typeahead | 0 | Chars number to start to searching, if 0 it's disabled |
 
 ## Events
 
