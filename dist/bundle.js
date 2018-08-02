@@ -1,14 +1,14 @@
-// [DozSearchfield]  Build version: 1.1.0  
+// [DozSearchfield]  Build version: 1.1.1  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("doz"));
 	else if(typeof define === 'function' && define.amd)
-		define("DozSearchfield", [], factory);
+		define("DozSearchfield", ["doz"], factory);
 	else if(typeof exports === 'object')
-		exports["DozSearchfield"] = factory();
+		exports["DozSearchfield"] = factory(require("doz"));
 	else
-		root["DozSearchfield"] = factory();
-})(this, function() {
+		root["DozSearchfield"] = factory(root["Doz"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE__6__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -761,7 +761,7 @@ exports.default = {
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = require("doz");
+module.exports = __WEBPACK_EXTERNAL_MODULE__6__;
 
 /***/ }),
 /* 7 */
