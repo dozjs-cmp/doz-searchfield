@@ -96,11 +96,6 @@ Doz.component('app-wrapper', {
 });
 ```
 
-#### CDN unpkg
-```html
-<script src="https://unpkg.com/doz-searchfield/dist/bundle.min.js"></script>
-```
-
 ## Changelog
 You can view the changelog <a target="_blank" href="https://github.com/dozjs-cmp/doz-searchfield/blob/master/CHANGELOG.md">here</a>
 
