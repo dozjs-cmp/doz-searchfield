@@ -1,4 +1,4 @@
-// [DozSearchfield]  Build version: 1.1.2  
+// [DozSearchfield]  Build version: 1.1.3  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("doz"));
@@ -726,7 +726,7 @@ exports.default = {
     },
 
     template: function template() {
-        return '\n            <input\n                placeholder="' + this.props.placeholder + '"\n                class="' + this.props.inputClass + '"\n                type="' + (this.props.showClearButton ? 'search' : 'text') + '"\n                name="' + this.props.name + '"\n                value="' + this.props.value + '"\n                oninput="this.$onInput()"\n                onkeyup="this.$onKeyUp()"\n                d-bind="value"\n                id="' + this.props.inputId + '"\n            >\n            <button \n                class="' + this.props.buttonClass + '" \n                style="display: ' + (this.props.showButton ? 'inline' : 'none') + '" \n                onclick="this.$search()"\n            >' + this.props.buttonLabel + '</button>\n        ';
+        return '\n            <input\n                placeholder="' + this.props.placeholder + '"\n                class="' + this.props.inputClass + '"\n                type="' + (this.props.showClearButton ? 'search' : 'text') + '"\n                name="' + this.props.name + '"\n                value="' + this.props.value + '"\n                oninput="this.$onInput()"\n                onkeyup="this.$onKeyUp()"\n                d-ref="input"\n                d-bind="value"\n                id="' + this.props.inputId + '"\n            >\n            <button \n                class="' + this.props.buttonClass + '" \n                style="display: ' + (this.props.showButton ? 'inline' : 'none') + '" \n                onclick="this.$search()"\n            >' + this.props.buttonLabel + '</button>\n        ';
     },
     onCreate: function onCreate() {
         this.$isSearching = false;
@@ -749,7 +749,7 @@ exports.default = {
             this.$lastValue = null;
             this.props.value = value;
             setTimeout(function () {
-                _this.props.value = value;
+                _this.ref.input.value = value;
             }, 10);
         }
 
