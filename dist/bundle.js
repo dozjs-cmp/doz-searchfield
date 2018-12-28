@@ -8,7 +8,7 @@
 		exports["DozSearchfield"] = factory(require("doz"));
 	else
 		root["DozSearchfield"] = factory(root["Doz"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE__1__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_doz__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -92,111 +92,45 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = {
-
-    props: {
-        name: '',
-        value: '',
-        showButton: false,
-        buttonLabel: 'Search',
-        placeholder: 'Search here...',
-        buttonClass: '',
-        inputClass: '',
-        inputId: '',
-        showClearButton: true,
-        typeahead: 0
-    },
-
-    template: function template() {
-        return '\n            <input\n                placeholder="' + this.props.placeholder + '"\n                class="' + this.props.inputClass + '"\n                type="' + (this.props.showClearButton ? 'search' : 'text') + '"\n                name="' + this.props.name + '"\n                value="' + this.props.value + '"\n                oninput="this.$onInput()"\n                onkeyup="this.$onKeyUp()"\n                d-ref="input"\n                d-bind="value"\n                id="' + this.props.inputId + '"\n            >\n            <button \n                class="' + this.props.buttonClass + '" \n                style="display: ' + (this.props.showButton ? 'inline' : 'none') + '" \n                onclick="this.$search()"\n            >' + this.props.buttonLabel + '</button>\n        ';
-    },
-    onCreate: function onCreate() {
-        this.$isSearching = false;
-        this.$lastValue = '';
-        this.$overTypehead = false;
-    },
-    $onInput: function $onInput(e) {
-        if (this.props.value.length === 0 && this.$isSearching || e.target.value === '') this.$clear();
-        if (this.props.typeahead && this.props.value.length >= this.props.typeahead) this.$overTypehead = true;
-    },
-    $onKeyUp: function $onKeyUp(e) {
-        if (e.keyCode === 13 || e.keyCode === 8 && this.props.typeahead && this.$overTypehead || this.props.typeahead && this.props.value.length >= this.props.typeahead) {
-            this.$search();
-        }
-    },
-    $search: function $search(value) {
-        var _this = this;
-
-        if (typeof value !== 'undefined') {
-            this.$lastValue = null;
-            this.props.value = value;
-            //workaround
-            setTimeout(function () {
-                _this.ref.input.value = value;
-            });
-        }
-
-        if (this.$lastValue === this.props.value) return;
-        this.$lastValue = this.props.value;
-        this.$isSearching = true;
-        this.emit('search', this.props.value);
-    },
-    $clear: function $clear() {
-        this.props.value = '';
-        this.$lastValue = '';
-        this.$overTypehead = false;
-        this.$isSearching = false;
-        this.emit('clear');
-    }
-};
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _doz = __webpack_require__(/*! doz */ \"doz\");\n\nvar _doz2 = _interopRequireDefault(_doz);\n\nvar _lib = __webpack_require__(/*! ./lib */ \"./lib/index.js\");\n\nvar _lib2 = _interopRequireDefault(_lib);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// expose component to global scope\nif (typeof window !== 'undefined') {\n    _doz2.default.component('doz-searchfield', _lib2.default);\n}\n\nexports.default = _lib2.default;\n\n//# sourceURL=webpack://DozSearchfield/./index.js?");
 
 /***/ }),
-/* 1 */
+
+/***/ "./lib/index.js":
+/*!**********************!*\
+  !*** ./lib/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.default = {\n\n    props: {\n        name: '',\n        value: '',\n        showButton: false,\n        buttonLabel: 'Search',\n        placeholder: 'Search here...',\n        buttonClass: '',\n        inputClass: '',\n        inputId: '',\n        showClearButton: true,\n        typeahead: 0\n    },\n\n    template: function template() {\n        return '\\n            <input\\n                placeholder=\"' + this.props.placeholder + '\"\\n                class=\"' + this.props.inputClass + '\"\\n                type=\"' + (this.props.showClearButton ? 'search' : 'text') + '\"\\n                name=\"' + this.props.name + '\"\\n                value=\"' + this.props.value + '\"\\n                oninput=\"this.$onInput()\"\\n                onkeyup=\"this.$onKeyUp()\"\\n                d-ref=\"input\"\\n                d-bind=\"value\"\\n                id=\"' + this.props.inputId + '\"\\n            >\\n            <button \\n                class=\"' + this.props.buttonClass + '\" \\n                style=\"display: ' + (this.props.showButton ? 'inline' : 'none') + '\" \\n                onclick=\"this.$search()\"\\n            >' + this.props.buttonLabel + '</button>\\n        ';\n    },\n    onCreate: function onCreate() {\n        this.$isSearching = false;\n        this.$lastValue = '';\n        this.$overTypehead = false;\n    },\n    $onInput: function $onInput(e) {\n        if (e.target.value === '') this.$clear();\n        if (this.props.typeahead && this.props.value.length >= this.props.typeahead) this.$overTypehead = true;\n    },\n    $onKeyUp: function $onKeyUp(e) {\n        if (e.keyCode === 13 || e.keyCode === 8 && this.props.typeahead && this.$overTypehead || this.props.typeahead && this.props.value.length >= this.props.typeahead) {\n            this.$search();\n        }\n    },\n    $search: function $search(value) {\n        var _this = this;\n\n        if (typeof value !== 'undefined') {\n            this.$lastValue = null;\n            this.props.value = value;\n            //workaround\n            setTimeout(function () {\n                _this.ref.input.value = value;\n            });\n        }\n\n        if (this.$lastValue === this.props.value) return;\n        this.$lastValue = this.props.value;\n        this.$isSearching = true;\n        this.emit('search', this.props.value);\n    },\n    $clear: function $clear() {\n        this.props.value = '';\n        this.$lastValue = '';\n        this.$overTypehead = false;\n        this.$isSearching = false;\n        this.emit('clear');\n    }\n};\n\n//# sourceURL=webpack://DozSearchfield/./lib/index.js?");
+
+/***/ }),
+
+/***/ "doz":
+/*!******************************************************************************!*\
+  !*** external {"commonjs":"doz","commonjs2":"doz","amd":"doz","root":"Doz"} ***!
+  \******************************************************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _doz = __webpack_require__(1);
-
-var _doz2 = _interopRequireDefault(_doz);
-
-var _lib = __webpack_require__(0);
-
-var _lib2 = _interopRequireDefault(_lib);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// expose component to global scope
-if (typeof window !== 'undefined') {
-    _doz2.default.component('doz-searchfield', _lib2.default);
-}
-
-exports.default = _lib2.default;
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_doz__;\n\n//# sourceURL=webpack://DozSearchfield/external_%7B%22commonjs%22:%22doz%22,%22commonjs2%22:%22doz%22,%22amd%22:%22doz%22,%22root%22:%22Doz%22%7D?");
 
 /***/ })
-/******/ ]);
+
+/******/ });
 }); 
