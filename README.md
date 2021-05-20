@@ -60,6 +60,7 @@ new Doz({
 | input-id | | Input ID |
 | show-clear-button | true | Show clear button |
 | typeahead | 0 | Chars number to start to searching, if 0 it's disabled |
+| force-search | false | Force search event if value is already searched |
 
 ## Events
 
