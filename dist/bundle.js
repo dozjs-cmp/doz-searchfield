@@ -1,4 +1,4 @@
-// [DozSearchfield]  Build version: 1.1.7  
+// [DozSearchfield]  Build version: 1.2.0  
  (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("doz"));
@@ -122,7 +122,8 @@ exports.default = {
         inputClass: '',
         inputId: '',
         showClearButton: true,
-        typeahead: 0
+        typeahead: 0,
+        forceSearch: false
     },
 
     template: function template(h) {
@@ -152,7 +153,7 @@ exports.default = {
             })*/
         }
 
-        if (this.$lastValue === this.props.value) return;
+        if (!this.props.forceSearch && this.$lastValue === this.props.value) return;
         this.$lastValue = this.props.value;
         this.$isSearching = true;
         this.emit('search', this.props.value);
