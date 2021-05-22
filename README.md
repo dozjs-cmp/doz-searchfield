@@ -79,8 +79,8 @@ Doz.component('app-wrapper', {
     props: {
         log: ''
     },
-    template() {
-        return `
+    template(h) {
+        return h`
             <div>
                 <doz-searchfield
                     d:on-search="$onSearch"
