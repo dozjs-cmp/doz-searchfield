@@ -17,9 +17,11 @@ import 'doz-searchfield'
 
 new Doz({
     root: '#app',
-    template: `
-        <doz-searchfield></doz-searchfield>
-    `
+    template(h) {
+        return h`
+            <doz-searchfield></doz-searchfield>
+        `
+    } 
 })
 ```
 
@@ -32,8 +34,8 @@ Doz.component('my-wrapper', {
     components: {
         'also-a-custom-name': DozSearchfield
     },
-    template() {
-        return `
+    template(h) {
+        return h`
             <also-a-custom-name></also-a-custom-name>
         `
     }
@@ -41,9 +43,11 @@ Doz.component('my-wrapper', {
 
 new Doz({
     root: '#app',
-    template: `
-        <my-wrapper></my-wrapper>
-    `
+    template(h) { 
+        return h`
+            <my-wrapper></my-wrapper>
+        `
+    } 
 })
 ```
 
